@@ -10,7 +10,8 @@ import SwiftUI
 final class ContentViewModel: ObservableObject {
     
     let camera = Camera()
-    @Published var viewfinderImage: Image?
+    @Published var image: Image?
+    @Published var color: Color = .clear
     @Published var colorName: String = "Preto"
     
     init() {
@@ -20,10 +21,13 @@ final class ContentViewModel: ObservableObject {
     }
     
     func handleCameraPreviews() async {
-        let imageStream = camera.previewStream.map { $0.image }
-        for await image in imageStream {
+        let imageStream = camera.previewStream.map { $0 }
+        for await ciImage in imageStream {
             Task { @MainActor in
-                viewfinderImage = image
+                self.image = ciImage.toImage
+                if let averageColor = ciImage.averageColor {
+                    self.color = Color(averageColor)
+                }
             }
         }
     }
@@ -35,7 +39,7 @@ final class ContentViewModel: ObservableObject {
 
 
 fileprivate extension CIImage {
-    var image: Image? {
+    var toImage: Image? {
         let ciContext = CIContext()
         guard let cgImage = ciContext.createCGImage(self, from: self.extent) else { return nil }
         return Image(decorative: cgImage, scale: 1, orientation: .up)

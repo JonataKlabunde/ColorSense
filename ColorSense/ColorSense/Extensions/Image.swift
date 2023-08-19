@@ -7,10 +7,10 @@
 
 import SwiftUI
 
-extension UIImage {
+extension CIImage {
     
     var averageColor: UIColor? {
-        guard let inputImage = CIImage(image: self) else { return nil }
+        let inputImage = self
         let extentVector = CIVector(
             x: inputImage.extent.origin.x,
             y: inputImage.extent.origin.y,
@@ -39,4 +39,5 @@ extension UIImage {
             alpha: CGFloat(bitmap[3]) / 255
         )
     }
+    
 }

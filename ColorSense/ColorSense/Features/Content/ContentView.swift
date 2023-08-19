@@ -12,13 +12,16 @@ struct ContentView: View {
     @ObservedObject var viewModel = ContentViewModel()
     
     var body: some View {
-        ZStack {
-            CameraView(image: $viewModel.viewfinderImage)
+        ZStack {            
+            /// camera view
+            CameraView(image: $viewModel.image)
                 .frame(maxWidth: .infinity, maxHeight: .infinity)
                 .background(Color.black)
                 .task {
                     await viewModel.camera.start()
                 }
+            
+            /// color name
             colorName()
         }
         .ignoresSafeArea()
@@ -37,7 +40,8 @@ struct ContentView: View {
             }
             .frame(height: 100)
             .frame(maxWidth: .infinity)
-            .background(.ultraThinMaterial)
+//            .background(.ultraThinMaterial)
+            .background(viewModel.color)
             .cornerRadius(20)
             .padding(.horizontal, 20)
             .padding(.bottom, 60)
