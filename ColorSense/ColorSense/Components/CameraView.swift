@@ -7,39 +7,17 @@
 
 import SwiftUI
 
-struct CameraView: UIViewControllerRepresentable {
+struct CameraView: View {
+    @Binding var image: Image?
     
-    @Binding var isShown: Bool
-    @Binding var image: UIImage?
-    
-    class Coordinator: NSObject, UINavigationControllerDelegate, UIImagePickerControllerDelegate {
-        let parent: CameraView
-        init(_ parent: CameraView) {
-            self.parent = parent
+    var body: some View {
+        GeometryReader { geometry in
+            if let image = image {
+                image
+                    .resizable()
+                    .scaledToFill()
+                    .frame(width: geometry.size.width, height: geometry.size.height)
+            }
         }
-        
-        func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
-            let uiImage = info[UIImagePickerController.InfoKey.originalImage] as! UIImage
-            parent.image = uiImage
-            parent.isShown = false
-        }
-        
-        func imagePickerControllerDidCancel(_ picker: UIImagePickerController) {
-            parent.isShown = false
-        }
-    }
-    
-    func makeCoordinator() -> Coordinator {
-        return Coordinator(self)
-    }
-    
-    func makeUIViewController(context: Context) -> UIImagePickerController {
-        let picker = UIImagePickerController()
-        picker.delegate = context.coordinator
-        picker.sourceType = .camera
-        return picker
-    }
-    
-    func updateUIViewController(_ uiViewController: UIImagePickerController, context: UIViewControllerRepresentableContext<CameraView>) {
     }
 }

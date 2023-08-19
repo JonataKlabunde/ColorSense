@@ -13,16 +13,13 @@ struct ContentView: View {
     
     var body: some View {
         ZStack {
-            
-            ViewfinderView(image: $viewModel.viewfinderImage)
+            CameraView(image: $viewModel.viewfinderImage)
                 .frame(maxWidth: .infinity, maxHeight: .infinity)
                 .background(Color.black)
-
-    
+                .task {
+                    await viewModel.camera.start()
+                }
             colorName()
-        }
-        .task {
-            await viewModel.camera.start()
         }
         .ignoresSafeArea()
         .background(Color.gray)
@@ -55,26 +52,5 @@ struct ContentView: View {
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
         ContentView()
-    }
-}
-
-struct ViewfinderView: View {
-    @Binding var image: Image?
-    
-    var body: some View {
-        GeometryReader { geometry in
-            if let image = image {
-                image
-                    .resizable()
-                    .scaledToFill()
-                    .frame(width: geometry.size.width, height: geometry.size.height)
-            }
-        }
-    }
-}
-
-struct ViewfinderView_Previews: PreviewProvider {
-    static var previews: some View {
-        ViewfinderView(image: .constant(Image(systemName: "pencil")))
     }
 }
