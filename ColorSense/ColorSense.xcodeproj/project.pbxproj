@@ -13,6 +13,8 @@
 		D998C9F02A91149A00E66946 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D998C9EF2A91149A00E66946 /* Preview Assets.xcassets */; };
 		D998C9F82A9118F700E66946 /* ContentViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D998C9F72A9118F700E66946 /* ContentViewModel.swift */; };
 		D998C9FC2A9119BB00E66946 /* ObservableObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = D998C9FB2A9119BB00E66946 /* ObservableObject.swift */; };
+		D998CA012A9122F500E66946 /* UIImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = D998CA002A9122F500E66946 /* UIImage.swift */; };
+		D998CA032A91250A00E66946 /* CameraView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D998CA022A91250A00E66946 /* CameraView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -23,6 +25,8 @@
 		D998C9EF2A91149A00E66946 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		D998C9F72A9118F700E66946 /* ContentViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentViewModel.swift; sourceTree = "<group>"; };
 		D998C9FB2A9119BB00E66946 /* ObservableObject.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ObservableObject.swift; sourceTree = "<group>"; };
+		D998CA002A9122F500E66946 /* UIImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIImage.swift; sourceTree = "<group>"; };
+		D998CA022A91250A00E66946 /* CameraView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -86,6 +90,7 @@
 			isa = PBXGroup;
 			children = (
 				D998C9FB2A9119BB00E66946 /* ObservableObject.swift */,
+				D998CA002A9122F500E66946 /* UIImage.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -101,6 +106,7 @@
 		D998C9FD2A911AA000E66946 /* Components */ = {
 			isa = PBXGroup;
 			children = (
+				D998CA022A91250A00E66946 /* CameraView.swift */,
 			);
 			path = Components;
 			sourceTree = "<group>";
@@ -176,7 +182,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				D998C9EB2A91149900E66946 /* ContentView.swift in Sources */,
+				D998CA012A9122F500E66946 /* UIImage.swift in Sources */,
 				D998C9FC2A9119BB00E66946 /* ObservableObject.swift in Sources */,
+				D998CA032A91250A00E66946 /* CameraView.swift in Sources */,
 				D998C9E92A91149900E66946 /* ColorSenseApp.swift in Sources */,
 				D998C9F82A9118F700E66946 /* ContentViewModel.swift in Sources */,
 			);

@@ -11,6 +11,10 @@ final class ContentViewModel: ObservableObject {
     
     @Published var colorName: String = "Preto"
     
+    @Published var cameraIsVisible: Bool = false
+    @Published var image: UIImage? = UIImage()
+    
+    
     func sayTheName() {
         feedbackImpact(.heavy)
     }

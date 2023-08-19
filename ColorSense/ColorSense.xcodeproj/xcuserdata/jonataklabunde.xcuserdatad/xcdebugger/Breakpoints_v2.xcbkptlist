@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Bucket
+   uuid = "6957A0DB-55D7-470D-B1A7-355DA5600FA1"
+   type = "1"
+   version = "2.0">
+   <Breakpoints>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "04F6B00C-CD3D-4C90-8204-0980E9733FB6"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "ColorSense/Components/CameraView.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "16"
+            endingLineNumber = "16"
+            landmarkName = "Coordinator"
+            landmarkType = "3">
+            <Locations>
+               <Location
+                  uuid = "04F6B00C-CD3D-4C90-8204-0980E9733FB6 - f1bd13a7aa51dc48"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "ColorSense.CameraView.Coordinator.__allocating_init(ColorSense.CameraView) -&gt; ColorSense.CameraView.Coordinator"
+                  moduleName = "ColorSense"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/jonataklabunde/Developer/ColorSense/ColorSense/ColorSense/Components/CameraView.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "0"
+                  endingLineNumber = "0"
+                  offsetFromSymbolStart = "24">
+               </Location>
+               <Location
+                  uuid = "04F6B00C-CD3D-4C90-8204-0980E9733FB6 - 62030eca9dd2a77a"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "ColorSense.CameraView.Coordinator.init(ColorSense.CameraView) -&gt; ColorSense.CameraView.Coordinator"
+                  moduleName = "ColorSense"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/jonataklabunde/Developer/ColorSense/ColorSense/ColorSense/Components/CameraView.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "17"
+                  endingLineNumber = "17"
+                  offsetFromSymbolStart = "48">
+               </Location>
+               <Location
+                  uuid = "04F6B00C-CD3D-4C90-8204-0980E9733FB6 - 95028f4c9acf97d5"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "ColorSense.CameraView.Coordinator.parent.getter : ColorSense.CameraView"
+                  moduleName = "ColorSense"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/jonataklabunde/Developer/ColorSense/ColorSense/ColorSense/Components/CameraView.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "16"
+                  endingLineNumber = "16"
+                  offsetFromSymbolStart = "148">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+   </Breakpoints>
+</Bucket>

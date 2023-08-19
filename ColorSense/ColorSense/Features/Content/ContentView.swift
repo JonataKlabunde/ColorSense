@@ -14,6 +14,8 @@ struct ContentView: View {
     var body: some View {
         VStack(spacing: 0) {
             
+//            CameraView(isShown: $viewModel.cameraIsVisible, image: $viewModel.image)
+            
             Spacer()
             
             colorName()
