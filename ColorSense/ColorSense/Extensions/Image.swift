@@ -40,4 +40,30 @@ extension CIImage {
         )
     }
     
+    
+    var centralPixelColor: UIColor? {
+        let context = CIContext(options: nil)
+        let centralPoint = CGPoint(x: extent.size.width / 2, y: extent.size.height / 2)
+        let centralRect = CGRect(x: centralPoint.x, y: centralPoint.y, width: 1, height: 1)
+
+        var pixel: [UInt8] = [0, 0, 0, 0]
+        
+        context.render(self,
+                       toBitmap: &pixel,
+                       rowBytes: 4,
+                       bounds: centralRect,
+                       format: .RGBA8,
+                       colorSpace: CGColorSpace(name: CGColorSpace.sRGB))
+
+        let red = CGFloat(pixel[0]) / 255.0
+        let green = CGFloat(pixel[1]) / 255.0
+        let blue = CGFloat(pixel[2]) / 255.0
+        let alpha = CGFloat(pixel[3]) / 255.0
+
+        return UIColor(red: red, green: green, blue: blue, alpha: alpha)
+    }
+    
+
+
+    
 }

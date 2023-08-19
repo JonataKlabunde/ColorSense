@@ -25,9 +25,15 @@ final class ContentViewModel: ObservableObject {
         for await ciImage in imageStream {
             Task { @MainActor in
                 self.image = ciImage.toImage
-                if let averageColor = ciImage.averageColor {
-                    self.color = Color(averageColor)
+//                if let averageColor = ciImage.averageColor {
+//                    self.color = Color(averageColor)
+//                }
+                
+                if let centralPixelColor = ciImage.centralPixelColor {
+                    self.color = Color(centralPixelColor)
                 }
+                
+                
             }
         }
     }
