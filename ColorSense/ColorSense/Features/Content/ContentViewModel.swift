@@ -5,6 +5,7 @@
 //  Created by jonata klabunde on 19/08/23.
 //
 
+import AVFoundation
 import SwiftUI
 
 final class ContentViewModel: ObservableObject {
@@ -13,6 +14,7 @@ final class ContentViewModel: ObservableObject {
     @Published var image: Image?
     @Published var color: Color = .clear
     @Published var colorName: String = "Preto"
+    let synthesizer = AVSpeechSynthesizer()
     
     init() {
         Task {
@@ -36,12 +38,21 @@ final class ContentViewModel: ObservableObject {
         }
     }
     
+    
     func sayTheName() {
         feedbackImpact(.heavy)
+        let utterance = AVSpeechUtterance(string: "Cor \(self.colorName)")
+        utterance.voice = AVSpeechSynthesisVoice(language: "pt-BR")
+        synthesizer.speak(utterance)
         
         print("ios - \(self.color)")
+
     }
+
 }
+
+
+
 
 
 fileprivate extension CIImage {
@@ -55,7 +66,9 @@ fileprivate extension CIImage {
 fileprivate extension UIColor {
     func name() -> String? {
         let colorList: [String: UIColor] = [
-            "Branco": UIColor.white,
+            /// manual
+            "Branco": UIColor(displayP3Red: 215.0/255, green: 215.0/255, blue: 204.0/255, alpha: 1.0),
+//            "Branco": UIColor.white,
             "Vermelho": UIColor.red,
             "Verde": UIColor.green,
             "Azul": UIColor.blue,
