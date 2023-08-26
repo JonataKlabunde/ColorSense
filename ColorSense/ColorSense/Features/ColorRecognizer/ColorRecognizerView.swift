@@ -1,5 +1,5 @@
 //
-//  ContentView.swift
+//  ColorRecognizerView.swift
 //  ColorSense
 //
 //  Created by jonata klabunde on 19/08/23.
@@ -7,20 +7,15 @@
 
 import SwiftUI
 
-struct ContentView: View {
+struct ColorRecognizerView: View {
     
-    @ObservedObject var viewModel = ContentViewModel()
-    @ObservedObject var voice = VoiceCommand { command in
-        
-        
-    }
+    @Environment(\.dismiss) var dismiss
+    @ObservedObject var viewModel = ColorRecognizerViewModel()
     @State private var timer: Timer?
-    @State private var microphoneEnable = false
-    @State private var scale: CGFloat = 1
-    private let animationTimer = Timer.publish(every: 0.5, on: .main, in: .common).autoconnect()
+    @State private var longPressEnable = false
     
     var body: some View {
-        ZStack {            
+        ZStack {
             /// camera view
             CameraView(image: $viewModel.image)
                 .frame(maxWidth: .infinity, maxHeight: .infinity)
@@ -38,17 +33,19 @@ struct ContentView: View {
             .onChanged { _ in
                 timer?.invalidate()
                 timer = Timer.scheduledTimer(withTimeInterval: 0.5, repeats: false) { _ in
-                    if microphoneEnable == false {
-                        microphoneEnable = true
+                    /// long press
+                    if longPressEnable == false {
+                        longPressEnable = true
                         viewModel.feedbackImpact(.rigid)
-                        /// long press                        
+                        Speaker.shared.say("Fechando leitor de cor")
+                        dismiss()
                     }
                 }
             }
             .onEnded { _ in
                 timer?.invalidate()
-                if microphoneEnable {
-                    microphoneEnable = false
+                if longPressEnable {
+                    longPressEnable = false
                     /// long press finish
                     viewModel.feedbackImpact(.rigid)
                 } else {
@@ -57,6 +54,10 @@ struct ContentView: View {
                 }
             }
         )
+        .onAppear {
+            Speaker.shared.say("Leitor de cor aberto")
+            Speaker.shared.say("Para fechar toque por três segundos na tela", delay: 1.0)
+        }
     }
     
     @ViewBuilder
@@ -78,39 +79,10 @@ struct ContentView: View {
         }
     }
     
-//    @ViewBuilder
-//    func microfoneIcon() -> some View {
-//        VStack {
-//            Spacer()
-//            Image(systemName: "mic.circle.fill")
-//                .resizable()
-//                .scaledToFill()
-//                .frame(width: 100, height: 100)
-//                .foregroundColor(.white.opacity(microphoneEnable ? 1.0 : 0.4))
-//                .animation(.easeInOut(duration: 0.3), value: microphoneEnable)
-////                .overlay {
-////                    if microphoneEnable {
-////                        Circle()
-////                            .stroke(.white.opacity(0.2), lineWidth: 2)
-////                            .scaleEffect(scale)
-////                            .onReceive(animationTimer) { _ in
-////                                withAnimation(Animation.linear(duration: 0.5).repeatForever(autoreverses: true)) {
-////                                    scale = scale == 1 ? 1.3 : 1
-////                                }
-////                            }
-////                    }
-////                }
-//                .padding(.bottom, 80)
-//        }
-//    }
-
-    
-    
-    
 }
 
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
-        ContentView()
+        ColorRecognizerView()
     }
 }

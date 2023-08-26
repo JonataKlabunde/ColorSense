@@ -11,13 +11,15 @@ import Speech
 final class HomeViewModel: ObservableObject {
     
     @Published var voicerIsVisible: Bool = false
+    @Published var colorRecognizerIsVisible: Bool = false
     var errorCount: Int = 0
     
     func runCommand(_ command: String) {
         voicerIsVisible = false
         
-        if command.contains("cor") {
+        if command.lowercased().contains("cor") {
             Speaker.shared.say("Abrindo leitor de cor")
+            colorRecognizerIsVisible = true
             return
         }
         

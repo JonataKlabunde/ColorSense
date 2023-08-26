@@ -1,5 +1,5 @@
 //
-//  ContentViewModel.swift
+//  ColorRecognizerViewModel.swift
 //  ColorSense
 //
 //  Created by jonata klabunde on 19/08/23.
@@ -9,7 +9,7 @@ import AVFoundation
 import SwiftUI
 
 
-final class ContentViewModel: ObservableObject {
+final class ColorRecognizerViewModel: ObservableObject {
     
     let camera = Camera()
     @Published var image: Image?
@@ -39,7 +39,7 @@ final class ContentViewModel: ObservableObject {
 }
 
 // MARK:  Private
-extension ContentViewModel {
+extension ColorRecognizerViewModel {
     
     func handleCameraPreviews() async {
         let imageStream = camera.previewStream.map { $0 }

@@ -34,6 +34,9 @@ struct HomeView: View {
         .onAppear {
             viewModel.voicerIsVisible = true
         }
+        .fullScreenCover(isPresented: $viewModel.colorRecognizerIsVisible) {
+            ColorRecognizerView(viewModel: ColorRecognizerViewModel())
+        }
     }
     
 }

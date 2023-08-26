@@ -26,7 +26,7 @@ class VoiceCommand: ObservableObject {
     }
     var commandFinished: (_ command: String)->Void
     
-    init(commandFinished: @escaping (_ command: String)->Void) {
+    init(initialText: String = "", commandFinished: @escaping (_ command: String)->Void) {
         self.commandFinished = commandFinished
         requestAuthorization()
     }
