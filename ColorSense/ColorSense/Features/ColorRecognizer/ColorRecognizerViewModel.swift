@@ -13,13 +13,10 @@ final class ColorRecognizerViewModel: ObservableObject {
     
     let camera = Camera()
     @Published var image: Image?
-    @Published var color: Color = .white
+    @Published var color: Color = .clear
     @Published var colorName: String = ""
     
-    
-    
     init() {
-        /// camera
         Task {
             await handleCameraPreviews()
         }
@@ -29,12 +26,6 @@ final class ColorRecognizerViewModel: ObservableObject {
         feedbackImpact(.heavy)
         Speaker.shared.say("Cor \(self.colorName)")
     }
-    
-    
-    func voiceCommand() {
-        
-    }
-    
 
 }
 

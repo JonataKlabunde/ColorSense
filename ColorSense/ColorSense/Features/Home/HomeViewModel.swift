@@ -15,9 +15,17 @@ final class HomeViewModel: ObservableObject {
     var errorCount: Int = 0
     
     func runCommand(_ command: String) {
+        let command = command.lowercased()
         voicerIsVisible = false
         
-        if command.lowercased().contains("cor") {
+        /// comandos
+        if command.contains("comando") || command.contains("comandos") {
+            commandInstructions()
+            return
+        }
+        
+        /// cor
+        if command.contains("cor") {
             Speaker.shared.say("Abrindo leitor de cor")
             colorRecognizerIsVisible = true
             return
@@ -40,8 +48,9 @@ final class HomeViewModel: ObservableObject {
     private func commandInstructions() {
         errorCount = 0
         Speaker.shared.say("Você pode usar os seguintes comandos!")
-        Speaker.shared.say("Abrindo leitor de cor", delay: 1.0)
-        Speaker.shared.say("Leitor de documentos", delay: 1.0)
+        Speaker.shared.say("Abrindo leitor de cor", delay: 2.0)
+        Speaker.shared.say("Leitor de documentos", delay: 2.0)
+        Speaker.shared.say("Medidor de distância", delay: 2.0)
     }
 
 }
