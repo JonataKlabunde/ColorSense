@@ -16,10 +16,18 @@ class VoiceCommand: ObservableObject {
     private var recognitionRequest: SFSpeechAudioBufferRecognitionRequest?
     private var recognitionTask: SFSpeechRecognitionTask?
     @Published var isRecording = false
-    @Published var commandText: String = "Pronunciar um comando!"
-
+    @Published var commandText: String = "Pronunciar um comando!" {
+        didSet {
+            Debouncer.shared.runOneTimeAfter(interval: 1.0) {
+                self.stop()
+                self.commandFinished(self.commandText)
+            }
+        }
+    }
+    var commandFinished: (_ command: String)->Void
     
-    init() {
+    init(commandFinished: @escaping (_ command: String)->Void) {
+        self.commandFinished = commandFinished
         requestAuthorization()
     }
     

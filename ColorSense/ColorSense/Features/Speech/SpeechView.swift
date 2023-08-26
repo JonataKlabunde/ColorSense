@@ -10,13 +10,16 @@ import SwiftUI
 struct SpeechView: View {
     
     @ObservedObject var viewModel = SpeechViewModel()
-    @ObservedObject var voice = VoiceCommand()
-    
+    @ObservedObject var voice: VoiceCommand
     @State private var timer: Timer?
     @State private var microphoneEnable = false
     @State private var scale: CGFloat = 1
-    private let animationTimer = Timer.publish(every: 0.5, on: .main, in: .common).autoconnect()
-        
+    private let animationTimer = Timer.publish(every: 0.5, on: .main, in: .common).autoconnect()    
+    
+    init(onComplete: @escaping (_ command: String)->Void) {
+        self.voice = VoiceCommand(commandFinished: onComplete)
+    }
+    
     var body: some View {
         ZStack {
             

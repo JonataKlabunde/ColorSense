@@ -12,6 +12,7 @@
 		D94D73312A981762002352ED /* SpeechViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D94D73302A981762002352ED /* SpeechViewModel.swift */; };
 		D989F8202A9658C100F32404 /* UIColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = D989F81F2A9658C100F32404 /* UIColor.swift */; };
 		D989F8242A96682B00F32404 /* VoiceCommand.swift in Sources */ = {isa = PBXBuildFile; fileRef = D989F8232A96682B00F32404 /* VoiceCommand.swift */; };
+		D98B0C072A998AC2009E8514 /* Debouncer.swift in Sources */ = {isa = PBXBuildFile; fileRef = D98B0C062A998AC2009E8514 /* Debouncer.swift */; };
 		D998C9E92A91149900E66946 /* ColorSenseApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = D998C9E82A91149900E66946 /* ColorSenseApp.swift */; };
 		D998C9EB2A91149900E66946 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D998C9EA2A91149900E66946 /* ContentView.swift */; };
 		D998C9ED2A91149A00E66946 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D998C9EC2A91149A00E66946 /* Assets.xcassets */; };
@@ -31,6 +32,7 @@
 		D94D73302A981762002352ED /* SpeechViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpeechViewModel.swift; sourceTree = "<group>"; };
 		D989F81F2A9658C100F32404 /* UIColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIColor.swift; sourceTree = "<group>"; };
 		D989F8232A96682B00F32404 /* VoiceCommand.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VoiceCommand.swift; sourceTree = "<group>"; };
+		D98B0C062A998AC2009E8514 /* Debouncer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Debouncer.swift; sourceTree = "<group>"; };
 		D998C9E52A91149900E66946 /* ColorSense.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ColorSense.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D998C9E82A91149900E66946 /* ColorSenseApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorSenseApp.swift; sourceTree = "<group>"; };
 		D998C9EA2A91149900E66946 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -138,6 +140,7 @@
 				D998CA052A912A1600E66946 /* Camera.swift */,
 				D989F8232A96682B00F32404 /* VoiceCommand.swift */,
 				D94D73272A97F337002352ED /* Speaker.swift */,
+				D98B0C062A998AC2009E8514 /* Debouncer.swift */,
 			);
 			path = Components;
 			sourceTree = "<group>";
@@ -229,6 +232,7 @@
 				D998C9FC2A9119BB00E66946 /* ObservableObject.swift in Sources */,
 				D998CA032A91250A00E66946 /* CameraView.swift in Sources */,
 				D998C9E92A91149900E66946 /* ColorSenseApp.swift in Sources */,
+				D98B0C072A998AC2009E8514 /* Debouncer.swift in Sources */,
 				D989F8202A9658C100F32404 /* UIColor.swift in Sources */,
 				D94D732D2A981124002352ED /* SpeechView.swift in Sources */,
 				D94D73312A981762002352ED /* SpeechViewModel.swift in Sources */,

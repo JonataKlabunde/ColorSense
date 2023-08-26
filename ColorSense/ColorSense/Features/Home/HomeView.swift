@@ -23,8 +23,10 @@ struct HomeView: View {
         .frame(maxWidth: .infinity, maxHeight: .infinity)
         .background(Color.white)
         .sheet(isPresented: $viewModel.voicerIsVisible) {
-            SpeechView()
-                .presentationDetents([.height(200)])
+            SpeechView(onComplete: { command in
+                viewModel.runCommand(command)
+            })
+            .presentationDetents([.height(200)])
         }
         .onTapGesture {
             viewModel.voicerIsVisible = true

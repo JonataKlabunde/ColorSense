@@ -10,7 +10,10 @@ import SwiftUI
 struct ContentView: View {
     
     @ObservedObject var viewModel = ContentViewModel()
-    @ObservedObject var voice = VoiceCommand()
+    @ObservedObject var voice = VoiceCommand { command in
+        
+        
+    }
     @State private var timer: Timer?
     @State private var microphoneEnable = false
     @State private var scale: CGFloat = 1
