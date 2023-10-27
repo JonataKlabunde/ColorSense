@@ -9,7 +9,6 @@ import SwiftUI
 
 struct SpeechView: View {
     
-    @ObservedObject var viewModel = SpeechViewModel()
     @ObservedObject var voice: VoiceCommand
     @State private var timer: Timer?
     @State private var microphoneEnable = false

@@ -12,7 +12,6 @@ extension UIColor {
         let colorList: [String: UIColor] = [
             /// manual
             "Branco": UIColor(displayP3Red: 215.0/255, green: 215.0/255, blue: 204.0/255, alpha: 1.0),
-//            "Branco": UIColor.white,
             "Vermelho": UIColor.red,
             "Verde": UIColor.green,
             "Azul": UIColor.blue,

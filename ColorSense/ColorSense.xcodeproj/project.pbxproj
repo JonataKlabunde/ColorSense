@@ -9,7 +9,6 @@
 /* Begin PBXBuildFile section */
 		D94D73282A97F337002352ED /* Speaker.swift in Sources */ = {isa = PBXBuildFile; fileRef = D94D73272A97F337002352ED /* Speaker.swift */; };
 		D94D732D2A981124002352ED /* SpeechView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D94D732C2A981124002352ED /* SpeechView.swift */; };
-		D94D73312A981762002352ED /* SpeechViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D94D73302A981762002352ED /* SpeechViewModel.swift */; };
 		D989F8202A9658C100F32404 /* UIColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = D989F81F2A9658C100F32404 /* UIColor.swift */; };
 		D989F8242A96682B00F32404 /* VoiceCommand.swift in Sources */ = {isa = PBXBuildFile; fileRef = D989F8232A96682B00F32404 /* VoiceCommand.swift */; };
 		D98B0C072A998AC2009E8514 /* Debouncer.swift in Sources */ = {isa = PBXBuildFile; fileRef = D98B0C062A998AC2009E8514 /* Debouncer.swift */; };
@@ -29,7 +28,6 @@
 /* Begin PBXFileReference section */
 		D94D73272A97F337002352ED /* Speaker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Speaker.swift; sourceTree = "<group>"; };
 		D94D732C2A981124002352ED /* SpeechView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpeechView.swift; sourceTree = "<group>"; };
-		D94D73302A981762002352ED /* SpeechViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpeechViewModel.swift; sourceTree = "<group>"; };
 		D989F81F2A9658C100F32404 /* UIColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIColor.swift; sourceTree = "<group>"; };
 		D989F8232A96682B00F32404 /* VoiceCommand.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VoiceCommand.swift; sourceTree = "<group>"; };
 		D98B0C062A998AC2009E8514 /* Debouncer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Debouncer.swift; sourceTree = "<group>"; };
@@ -62,7 +60,6 @@
 			isa = PBXGroup;
 			children = (
 				D94D732C2A981124002352ED /* SpeechView.swift */,
-				D94D73302A981762002352ED /* SpeechViewModel.swift */,
 			);
 			path = Speech;
 			sourceTree = "<group>";
@@ -235,7 +232,6 @@
 				D98B0C072A998AC2009E8514 /* Debouncer.swift in Sources */,
 				D989F8202A9658C100F32404 /* UIColor.swift in Sources */,
 				D94D732D2A981124002352ED /* SpeechView.swift in Sources */,
-				D94D73312A981762002352ED /* SpeechViewModel.swift in Sources */,
 				D998CA062A912A1600E66946 /* Camera.swift in Sources */,
 				D998C9F82A9118F700E66946 /* ColorRecognizerViewModel.swift in Sources */,
 				D94D73282A97F337002352ED /* Speaker.swift in Sources */,
