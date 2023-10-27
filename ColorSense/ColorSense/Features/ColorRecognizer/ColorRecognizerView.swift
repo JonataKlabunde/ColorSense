@@ -25,6 +25,7 @@ struct ColorRecognizerView: View {
                 }
             
             textBox()
+            point()
         }
         .ignoresSafeArea()
         .background(Color.gray)
@@ -59,6 +60,26 @@ struct ColorRecognizerView: View {
             Speaker.shared.say("Para fechar toque por três segundos na tela", delay: 1.0)
         }
     }
+    
+    
+    @ViewBuilder
+    func point() -> some View {
+        ZStack {
+            Rectangle()
+                .fill(.black)
+                .frame(width: 2, height: 40)
+            Rectangle()
+                .fill(.black)
+                .frame(width: 40, height: 2)
+            Circle()
+                .fill(.white)
+                .frame(width: 7, height: 7)
+            Circle()
+                .fill(.black)
+                .frame(width: 5, height: 5)
+        }
+    }
+    
     
     @ViewBuilder
     func textBox() -> some View {
